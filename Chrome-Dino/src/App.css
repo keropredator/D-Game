@@ -1,0 +1,38 @@
+/* In your styles file or add in a <style> tag in your App.jsx */
+.game-area {
+  width: 800px; /* Set the game area width */
+  height: 200px; /* Set the game area height */
+  border: 2px solid black; /* Visual boundary for the game area */
+  position: relative; /* Important for absolute positioning later */
+  margin: 0 auto; /* Center horizontally */
+  background-color: lightgray; /* Give it a background color for visibility */
+  overflow: hidden; /* Hide anything that goes beyond the game area */
+  position: relative;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+
+.dinosaur,
+.cactus {
+  font-size: 50px;
+  position: absolute;
+  bottom: 0; /* Makes them appear at the bottom of the game area */
+  transform: scaleX(-1);
+  /* smooth transition if position changes left or right or top or bottom */
+  /* transition: left 0.1s; */
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100vw); /* Start from outside the right edge */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
